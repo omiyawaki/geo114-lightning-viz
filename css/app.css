@@ -407,3 +407,37 @@ button.primary:hover:not(:disabled) {
   font-size: 0.82rem;
   color: var(--muted);
 }
+
+/* Blitzortung historical image (step 1) */
+.blitz-stage {
+  margin: 0.2rem 0.6rem 0.55rem;
+}
+
+.blitz-figure {
+  margin: 0;
+  background: #0b1c2c;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+
+.blitz-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(62vh, 560px);
+  object-fit: contain;
+  background: #0b1c2c;
+}
+
+.blitz-figure figcaption {
+  padding: 0.45rem 0.7rem 0.55rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: #f7f2e8;
+  border-top: 1px solid var(--rule);
+}
+
+.blitz-figure figcaption a {
+  font-weight: 650;
+}

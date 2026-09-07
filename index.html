@@ -21,18 +21,48 @@
       <section class="chart-wrap" aria-label="Map">
         <div class="chart-toolbar">
           <h2>Map</h2>
-          <p class="chart-sounding" id="layerLabel">Lightning density</p>
-          <span class="badge" id="lockBadge">Singles only</span>
+          <p class="chart-sounding" id="layerLabel">Blitzortung lightning</p>
+          <span class="badge" id="lockBadge">Lightning layer</span>
         </div>
-        <div class="chart-stage">
-          <canvas id="map" width="960" height="480" role="img" aria-label="Global map of atmospheric fields and lightning"></canvas>
+
+        <!-- Step 1: real Blitzortung historical view -->
+        <div class="blitz-stage" id="blitzStage">
+          <figure class="blitz-figure">
+            <img
+              id="blitzImg"
+              src="data/blitzortung-20250930-00z.png"
+              alt="Blitzortung historical world lightning map for 30 September 2025 at 00 UTC"
+              width="925"
+              height="678"
+            />
+            <figcaption>
+              Blitzortung / LiMaps historical earth map · 30 Sep 2025 · 00:00 UTC
+              ·
+              <a
+                href="https://www.blitzortung.org/en/historical_maps.php?map=0"
+                target="_blank"
+                rel="noopener"
+                >Open interactive historical maps</a
+              >
+              (set Date = 30 Sep 2025, Time = 00:00 UTC).
+            </figcaption>
+          </figure>
+          <p class="map-hint">
+            This is the real lightning geography for this case — not a made-up grid.
+            Later steps overlay ERA5 fields on a map with Natural Earth coastlines so you can compare.
+          </p>
+        </div>
+
+        <!-- Later steps: ERA5 + real coasts -->
+        <div class="chart-stage" id="era5Stage" hidden>
+          <canvas id="map" width="960" height="480" role="img" aria-label="Global map of ERA5 fields with Natural Earth coastlines"></canvas>
           <div class="readout" id="cursorReadout" hidden></div>
         </div>
-        <div class="legend-row">
+        <div class="legend-row" id="legendRow" hidden>
           <canvas id="legendBar" width="280" height="18" aria-hidden="true"></canvas>
           <span class="legend-units" id="legendUnits"></span>
         </div>
-        <p class="map-hint">Centered near 0° longitude. Drag to pan · scroll to zoom · click a cell for a readout.</p>
+        <p class="map-hint" id="era5Hint" hidden>Natural Earth 110m coasts · ERA5 ~1° · drag to pan · scroll to zoom · click a cell for a readout.</p>
       </section>
 
       <aside class="panel" id="labPanel" aria-label="Lab steps">
@@ -76,7 +106,7 @@
             </div>
             <label class="toggle">
               <input type="checkbox" id="showLightning" checked />
-              Keep lightning outlines on the map
+              Mark Blitzortung strike locations on the map
             </label>
             <p class="status" id="triedStatus"></p>
           </section>
@@ -100,6 +130,8 @@
       <a href="Lab5-lightning-handout.md">Lab handout</a>
       ·
       <a href="https://github.com/omiyawaki/geo114-lightning-viz">Source</a>
+      ·
+      Data: ERA5 (ARCO) + Blitzortung historical + Natural Earth 110m
     </footer>
 
     <script type="module" src="js/app.js"></script>

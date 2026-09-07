@@ -7,7 +7,7 @@ Name: _______________________________ Date: ________________
 ### How to turn this in
 Work through the online lab (steps on the right; map stays on the left). Fill in the blanks below as you go. Screenshots are optional but helpful when a field surprises you. Submit this completed handout on Nexus.
 
-**Case time baked into the tool:** 30 September 2025, 00 UTC (map centered near 0° longitude).
+**Case time baked into the tool:** 30 September 2025, 00 UTC. Lightning = Blitzortung historical; fields = ERA5; coasts = Natural Earth.
 
 The field menu does **not** tell you which variable is “correct.” Try singles first; combinations unlock after you have looked at at least two different fields on their own.
 
@@ -15,7 +15,7 @@ The field menu does **not** tell you which variable is “correct.” Try single
 
 ## 1. Lightning
 
-Look at lightning density for this time.
+Look at the **Blitzortung** historical lightning map for this time (real strikes, not a made-up grid).
 
 **Where is lightning active?** Name a few regions.
 
