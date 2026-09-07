@@ -25,7 +25,7 @@
           <span class="badge" id="lockBadge">Lightning layer</span>
         </div>
 
-        <!-- Step 1: real Blitzortung historical view -->
+        <!-- Step 1: lightning map -->
         <div class="blitz-stage" id="blitzStage">
           <figure class="blitz-figure">
             <img
@@ -48,21 +48,20 @@
             </figcaption>
           </figure>
           <p class="map-hint">
-            This is the real lightning geography for this case — not a made-up grid.
-            Later steps overlay ERA5 fields on a map with Natural Earth coastlines so you can compare.
+            Describe where lightning is active. Next you will compare atmospheric fields on a world map to this pattern.
           </p>
         </div>
 
-        <!-- Later steps: ERA5 + real coasts -->
+        <!-- Later steps: field map -->
         <div class="chart-stage" id="era5Stage" hidden>
-          <canvas id="map" width="960" height="480" role="img" aria-label="Global map of ERA5 fields with Natural Earth coastlines"></canvas>
+          <canvas id="map" width="960" height="480" role="img" aria-label="Global map of atmospheric fields"></canvas>
           <div class="readout" id="cursorReadout" hidden></div>
         </div>
         <div class="legend-row" id="legendRow" hidden>
           <canvas id="legendBar" width="280" height="18" aria-hidden="true"></canvas>
           <span class="legend-units" id="legendUnits"></span>
         </div>
-        <p class="map-hint" id="era5Hint" hidden>Natural Earth 110m coasts · ERA5 ~1° · drag to pan · scroll to zoom · click a cell for a readout.</p>
+        <p class="map-hint" id="era5Hint" hidden>Drag to pan · scroll to zoom · click a cell for a readout.</p>
       </section>
 
       <aside class="panel" id="labPanel" aria-label="Lab steps">
@@ -128,10 +127,6 @@
 
     <footer class="footer">
       <a href="Lab5-lightning-handout.md">Lab handout</a>
-      ·
-      <a href="https://github.com/omiyawaki/geo114-lightning-viz">Source</a>
-      ·
-      Data: ERA5 (ARCO) + Blitzortung historical + Natural Earth 110m
     </footer>
 
     <script type="module" src="js/app.js"></script>

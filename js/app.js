@@ -9,9 +9,9 @@ const STEPS = [
   {
     id: "lightning",
     title: "Lightning",
-    ask: "Look at the Blitzortung historical map for 30 September 2025 at 00 UTC. Where is lightning active right now?",
+    ask: "Look at the lightning map for 30 September 2025 at 00 UTC. Where is lightning active?",
     evidence: [
-      "Scan the real Blitzortung world map (not a made-up density field).",
+      "Look over the lightning map for this date and time.",
       "Name a few regions where strikes cluster, and a few where it looks quiet.",
       "Optional: open the interactive historical maps link and confirm Date = 30 Sep 2025, Time = 00:00 UTC.",
       "Jot a short description in the box below before you move on.",
@@ -22,7 +22,7 @@ const STEPS = [
   {
     id: "single-1",
     title: "Try one field",
-    ask: "Pick any single ERA5 field from the menu. Before you show it, predict whether it should line up with the lightning pattern you just saw.",
+    ask: "Pick any field from the menu. Before you show it, predict whether it should line up with the lightning pattern you just saw.",
     evidence: [
       "Choose one field — any field. The menu does not rank them for you.",
       "Predict: should this field match lightning well, partly, or poorly?",
@@ -616,7 +616,7 @@ async function boot() {
     state.flat[key] = Float32Array.from(grids.fields[key].data);
   }
 
-  $("caseLine").textContent = grids.case + " · ERA5 + Blitzortung";
+  $("caseLine").textContent = grids.case;
   populateSelects();
 
   $("fieldA").addEventListener("change", () => buildDisplay());
@@ -665,5 +665,5 @@ async function boot() {
 
 boot().catch((err) => {
   console.error(err);
-  $("stepAsk").textContent = "Could not load map data. Check data/grids.json and coastlines.";
+  $("stepAsk").textContent = "Could not load the map. Refresh the page or tell your instructor.";
 });
