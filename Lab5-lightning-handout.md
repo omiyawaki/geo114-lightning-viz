@@ -55,7 +55,7 @@ ________________________________________________________________
 
 ---
 
-## 3. Try another single
+## 3. Try another
 
 Pick a **different** field.
 
