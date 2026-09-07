@@ -77,9 +77,6 @@ ________________________________________________________________
 
 ---
 
-## 4. 
----
-
 ## 4. Combinations
 
 Now use two fields and an operation (A only, B only, A × B, or both-high mask).
