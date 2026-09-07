@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lightning</title>
+    <meta
+      name="description"
+      content="Explore which atmospheric fields line up with lightning — and why one ingredient is usually not enough."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%237a2033' width='16' height='16' rx='2'/%3E%3Cpath fill='%23f3eee3' d='M8 2 L10 7 L15 8 L10 9 L8 14 L6 9 L1 8 L6 7 Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Lightning</h1>
+      <p class="case-line" id="caseLine">30 September 2025 · 00 UTC</p>
+    </header>
+
+    <main class="layout">
+      <section class="chart-wrap" aria-label="Map">
+        <div class="chart-toolbar">
+          <h2>Map</h2>
+          <p class="chart-sounding" id="layerLabel">Lightning density</p>
+          <span class="badge" id="lockBadge">Singles only</span>
+        </div>
+        <div class="chart-stage">
+          <canvas id="map" width="960" height="480" role="img" aria-label="Global map of atmospheric fields and lightning"></canvas>
+          <div class="readout" id="cursorReadout" hidden></div>
+        </div>
+        <div class="legend-row">
+          <canvas id="legendBar" width="280" height="18" aria-hidden="true"></canvas>
+          <span class="legend-units" id="legendUnits"></span>
+        </div>
+        <p class="map-hint">Centered near 0° longitude. Drag to pan · scroll to zoom · click a cell for a readout.</p>
+      </section>
+
+      <aside class="panel" id="labPanel" aria-label="Lab steps">
+        <header class="wizard-head">
+          <h2 class="progress-label" id="stepTitle">1 Lightning</h2>
+          <ol class="dots" id="progressDots" aria-label="Lab steps"></ol>
+        </header>
+
+        <div class="step-scroll" id="stepScroll">
+          <section class="prompt-block">
+            <h3>Think about this</h3>
+            <p class="ask" id="stepAsk" tabindex="-1"></p>
+          </section>
+
+          <section class="prompt-block">
+            <h3>Do this</h3>
+            <ol class="evidence-list" id="stepEvidence"></ol>
+          </section>
+
+          <section class="controls" id="fieldControls" hidden>
+            <h3>Field menu</h3>
+            <p class="blurb" id="fieldBlurb">Pick any field. Nothing here tells you which one is “right.”</p>
+            <label class="field-label" for="fieldA">Show
+              <select id="fieldA"></select>
+            </label>
+            <div class="combo-block" id="comboBlock" hidden>
+              <label class="field-label" for="fieldB">Also
+                <select id="fieldB"></select>
+              </label>
+              <fieldset class="ops">
+                <legend>Operation</legend>
+                <label><input type="radio" name="op" value="a" checked /> A only</label>
+                <label><input type="radio" name="op" value="b" /> B only</label>
+                <label><input type="radio" name="op" value="product" /> A × B</label>
+                <label><input type="radio" name="op" value="mask" /> A × B where both high</label>
+              </fieldset>
+              <div class="thresh" id="threshRow" hidden>
+                <label>A high above <input type="range" id="threshA" min="30" max="90" value="55" /> <span id="threshAOut">55%</span></label>
+                <label>B high above <input type="range" id="threshB" min="30" max="90" value="55" /> <span id="threshBOut">55%</span></label>
+              </div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="showLightning" checked />
+              Keep lightning outlines on the map
+            </label>
+            <p class="status" id="triedStatus"></p>
+          </section>
+
+          <section class="prompt-block" id="claimBlock">
+            <h3>Write it down</h3>
+            <p id="stepClaim"></p>
+            <label class="visually-hidden" for="claimBox">Your notes</label>
+            <textarea id="claimBox" rows="3" placeholder="A sentence or two is fine…"></textarea>
+          </section>
+        </div>
+
+        <nav class="wizard-nav" aria-label="Step navigation">
+          <button type="button" id="btnPrev" disabled>Prev</button>
+          <button type="button" class="primary" id="btnNext">Next</button>
+        </nav>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <a href="Lab5-lightning-handout.md">Lab handout</a>
+      ·
+      <a href="https://github.com/omiyawaki/geo114-lightning-viz">Source</a>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
