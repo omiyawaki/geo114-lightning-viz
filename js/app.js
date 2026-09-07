@@ -13,7 +13,7 @@ const STEPS = [
     evidence: [
       "Look over the lightning map for this date and time.",
       "Name a few regions where strikes cluster, and a few where it looks quiet.",
-      "Optional: open the interactive historical maps link and confirm Date = 30 Sep 2025, Time = 00:00 UTC.",
+      "Open the interactive historical maps link and confirm Date = 30 Sep 2025, Time = 00:00 UTC.",
       "Jot a short description in the box below before you move on.",
     ],
     claim: "Where is lightning most active at this time? Why might that make sense?",
@@ -34,7 +34,7 @@ const STEPS = [
   {
     id: "single-2",
     title: "Try another",
-    ask: "Pick a different field than last time. Same routine: predict, show, then note the misses.",
+    ask: "Pick a different field than last time. Same routine: predict, show, then note the misses. You need two different fields before combinations unlock.",
     evidence: [
       "Choose a second field you have not already leaned on.",
       "Predict how it should relate to lightning, then show it.",
@@ -44,24 +44,12 @@ const STEPS = [
     mode: "single",
   },
   {
-    id: "single-3",
-    title: "One more single",
-    ask: "Optional but useful: try one more single field, or revisit an earlier one with a sharper eye. Combinations stay locked until you have tried at least two different singles.",
-    evidence: [
-      "If you have only tried one field so far, pick a second now — that unlocks combinations.",
-      "If you already tried two, you can explore a third or press Next.",
-      "Keep asking: is one ingredient enough?",
-    ],
-    claim: "Anything new after another single look?",
-    mode: "single",
-  },
-  {
     id: "combos",
     title: "Combinations",
     ask: "Now you can put two fields together. Show A, show B, or multiply them. Still no script for which pair is “correct.”",
     evidence: [
       "Pick field A and field B from the menu.",
-      "Try A only, B only, then A × B (and optionally “both high”).",
+      "Try A only, B only, A × B, and A × B where both are high.",
       "Document attempts that fail as carefully as ones that look good.",
     ],
     claim: "Which combo did you try? Did the product beat either field alone?",

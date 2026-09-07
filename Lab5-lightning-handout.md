@@ -5,7 +5,7 @@ Name: _______________________________ Date: ________________
 **Tool:** https://omiyawaki.github.io/geo114-lightning-viz/
 
 ### How to turn this in
-Work through the online lab (steps on the right; map stays on the left). Fill in the blanks below as you go. Screenshots are optional but helpful when a field surprises you. Submit this completed handout on Nexus.
+Work through the online lab (steps on the right; map stays on the left). Fill in the blanks below as you go. When a field surprises you, paste a screenshot with your Nexus upload. Submit this completed handout on Nexus.
 
 **Case:** 30 September 2025, 00 UTC.
 
@@ -77,21 +77,10 @@ ________________________________________________________________
 
 ---
 
-## 4. One more single (optional)
-
-If you want a third look before combining:
-
-**Field:** _______________________________
-
-**What did you notice?**
-
-________________________________________________________________
-
-________________________________________________________________
-
+## 4. 
 ---
 
-## 5. Combinations
+## 4. Combinations
 
 Now use two fields and an operation (A only, B only, A × B, or both-high mask).
 
@@ -113,7 +102,7 @@ ________________________________________________________________
 
 ---
 
-## 6. Best story
+## 5. Best story
 
 **Which single or combination lined up best with lightning?**
 
